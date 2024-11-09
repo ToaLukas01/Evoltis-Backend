@@ -42,11 +42,13 @@ builder.Services.AddAutoMapper(cfg =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: "CorsPolicy", builder => // "AllowWebApp"
+    options.AddPolicy(name: "CorsPolicy", builder => 
     {
+        builder.WithOrigins("http://localhost:4200");
         builder.AllowAnyOrigin();
         builder.AllowAnyMethod();
         builder.AllowAnyHeader();
+        builder.WithExposedHeaders("*");
     });
 });
 
