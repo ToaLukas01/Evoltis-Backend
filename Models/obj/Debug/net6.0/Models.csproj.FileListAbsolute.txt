@@ -1,0 +1,13 @@
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\bin\Debug\net6.0\Models.deps.json
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\bin\Debug\net6.0\Models.dll
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\bin\Debug\net6.0\Models.pdb
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.csproj.AssemblyReference.cache
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.AssemblyInfoInputs.cache
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.AssemblyInfo.cs
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.csproj.CoreCompileInputs.cache
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.sourcelink.json
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.dll
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\refint\Models.dll
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\Models.pdb
+C:\COSAS LUKAS\PROYECTOS\Evoltis-Challenge-CRUD\Evoltis-Backend-CRUD\Models\obj\Debug\net6.0\ref\Models.dll
