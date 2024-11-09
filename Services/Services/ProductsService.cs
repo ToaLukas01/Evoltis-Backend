@@ -37,8 +37,12 @@ namespace Services.Services
 
         public async Task<ProductoDTO> NewProduct(ProductoDTO productDTO)
         {
+            productDTO.Id = 0;
             var product = _mapper.Map<Product>(productDTO);
             var createdProduct = await _productsRepository.NewProduct(product);
+
+            if (createdProduct == null) return null;
+
             return _mapper.Map<ProductoDTO>(createdProduct);
         }
 

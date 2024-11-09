@@ -17,7 +17,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         //"CS": "server=127.0.0.1;port=3306;database=evoltis_challenge;user=root;password=local"
-        "CS": "Server=localhost\\DESKTOP-ECOL1TK;Database=evoltis_db;Trusted_Connection=True;"
+        "CS": "Server=DESKTOP-ECOL1TK;Database=evoltis_db;Trusted_Connection=True;"
       }
     },
     "Docker": {

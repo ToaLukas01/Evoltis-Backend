@@ -6,6 +6,7 @@ using Services.Interfaces;
 using Services.Services;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Models.DTO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,23 +17,28 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+string assemblyName = typeof(EvoltisContext).Namespace;
+var connectionString = Environment.GetEnvironmentVariable("CS") ?? builder.Configuration.GetConnectionString("CS");;
+
+builder.Services.AddDbContext<EvoltisContext>(options =>
+{
+    //options.UseMySql(connectionString,
+    //    ServerVersion.AutoDetect(connectionString),
+    //    optionsBuilder => optionsBuilder.MigrationsAssembly(assemblyName));
+    options.UseSqlServer(connectionString);
+});
+
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddFluentValidationAutoValidation();
 
 builder.Services.AddScoped<IProducts, ProductsRepository>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
 
-builder.Services.AddAutoMapper(typeof(Program));
-
-string assemblyName = typeof(EvoltisContext).Namespace;
-string connectionString = Environment.GetEnvironmentVariable("CS") ??
-    throw new InvalidOperationException("Connection string 'CS' not found.");
-builder.Services.AddDbContext<EvoltisContext>(options =>
+builder.Services.AddAutoMapper(cfg =>
 {
-    options.UseMySql(connectionString,
-        ServerVersion.AutoDetect(connectionString),
-        optionsBuilder => optionsBuilder.MigrationsAssembly(assemblyName));
+    cfg.AddProfile<Mapeo>();
 });
+
 
 builder.Services.AddCors(options =>
 {

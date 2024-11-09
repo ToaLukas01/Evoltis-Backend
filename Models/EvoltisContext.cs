@@ -17,6 +17,7 @@ namespace Models
         public DbSet<Product> Products { get; set; }
     }
 
+
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<EvoltisContext>
     {
         public EvoltisContext CreateDbContext(string[] args)
@@ -26,13 +27,31 @@ namespace Models
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
-
+            var connectionString = Environment.GetEnvironmentVariable("CS") ?? configuration.GetConnectionString("CS"); ;
             var optionsBuilder = new DbContextOptionsBuilder<EvoltisContext>();
-            optionsBuilder.UseMySql(connectionString,
-                ServerVersion.AutoDetect(connectionString));
+            optionsBuilder.UseSqlServer(connectionString);
 
             return new EvoltisContext(optionsBuilder.Options);
         }
     }
+
+
+    //public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<EvoltisContext>
+    //{
+    //    public EvoltisContext CreateDbContext(string[] args)
+    //    {
+    //        var configuration = new ConfigurationBuilder()
+    //            .SetBasePath(Directory.GetCurrentDirectory())
+    //            .AddJsonFile("appsettings.json")
+    //            .Build();
+
+    //        var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+    //        var optionsBuilder = new DbContextOptionsBuilder<EvoltisContext>();
+    //        optionsBuilder.UseMySql(connectionString,
+    //            ServerVersion.AutoDetect(connectionString));
+
+    //        return new EvoltisContext(optionsBuilder.Options);
+    //    }
+    //}
 }

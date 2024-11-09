@@ -86,6 +86,7 @@ namespace Repository.Repository
         { 
             try
             {
+                product.Id = 0;
                 _context.Products.Add(product);
                 await _context.SaveChangesAsync();
                 return product;
