@@ -22,9 +22,12 @@ var connectionString = Environment.GetEnvironmentVariable("CS") ?? builder.Confi
 
 builder.Services.AddDbContext<EvoltisContext>(options =>
 {
+    // --- conexion MySQL ---
     //options.UseMySql(connectionString,
     //    ServerVersion.AutoDetect(connectionString),
     //    optionsBuilder => optionsBuilder.MigrationsAssembly(assemblyName));
+
+    // --- conexion SqlServer ---
     options.UseSqlServer(connectionString);
 });
 

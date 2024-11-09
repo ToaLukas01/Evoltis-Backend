@@ -17,7 +17,7 @@ namespace Models
         public DbSet<Product> Products { get; set; }
     }
 
-
+    // --- Conexion con SqlServer para aplicar migraciones ---
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<EvoltisContext>
     {
         public EvoltisContext CreateDbContext(string[] args)
@@ -36,6 +36,7 @@ namespace Models
     }
 
 
+    // --- Conexion con MySQL para aplicar migraciones ---
     //public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<EvoltisContext>
     //{
     //    public EvoltisContext CreateDbContext(string[] args)
@@ -45,8 +46,7 @@ namespace Models
     //            .AddJsonFile("appsettings.json")
     //            .Build();
 
-    //        var connectionString = configuration.GetConnectionString("DefaultConnection");
-
+    //        var connectionString = Environment.GetEnvironmentVariable("CS") ?? configuration.GetConnectionString("CS"); ;
     //        var optionsBuilder = new DbContextOptionsBuilder<EvoltisContext>();
     //        optionsBuilder.UseMySql(connectionString,
     //            ServerVersion.AutoDetect(connectionString));
@@ -54,4 +54,6 @@ namespace Models
     //        return new EvoltisContext(optionsBuilder.Options);
     //    }
     //}
+
+
 }
